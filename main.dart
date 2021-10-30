@@ -1,82 +1,211 @@
 import 'package:flutter/material.dart';
-import 'package:timer_builder/timer_builder.dart';
-import 'package:intl/intl.dart';
+import 'package:table_calendar/table_calendar.dart';
 
-var date=DateTime.now();
-
-String GetSystemTime(){
-  var now=DateTime.now();
-  return DateFormat("M,d").format(now);
-}
-
-
-void main()=>runApp(MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: '과제',
-      home: MyHomePage(),
+      debugShowCheckedModeBanner: false,
+      title: '아무거나',
+      home: Home(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-
-
+class Home extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _HomeState createState() => _HomeState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _HomeState extends State<Home> {
 
+ DateTime focusedDay= DateTime.now();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('시간체크'),
-      ),
-      body: Container(
-        child:Column(
-          children: [
-            Row(
-              children: [
-                TimerBuilder.periodic( //리턴을 해줘야 함 Text로
-                    (Duration(minutes: 1)),
-                  builder:(context){
-                      print('${GetSystemTime()}');
-                      return Text('${GetSystemTime()}');
-                  },
+      backgroundColor: Colors.white,
+        body: Container(
+          child: Column(
+            children: [
+              Expanded(
+                flex: 4,
+                child: Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      if(DateTime.now()==DateTime.utc(2021, 11, 6))
+                        Container(
+                          width: 150,
+                          height: 150,
+                          child: Image.asset(
+                              'image/j.jpg'
+                          ),
+                        ),
+                      if(focusedDay==DateTime.utc(2021, 11, 13))
+                        Container(
+                          width: 150,
+                          height: 150,
+                          child: Image.asset(
+                              'image/l.jpg'
+                          ),
+                        ),
+                      if(focusedDay==DateTime.utc(2021, 11, 20))
+                        Container(
+                          width: 150,
+                          height: 150,
+                          child: Image.asset(
+                              'image/j.jpg'
+                          ),
+                        ),
+                      if(focusedDay==DateTime.utc(2021, 11, 20))
+                        Container(
+                          width: 150,
+                          height: 150,
+                          child: Image.asset(
+                              'image/j.jpg'
+                          ),
+                        ),
+                      if(focusedDay==DateTime.utc(2021, 11, 27))
+                        Container(
+                          width: 150,
+                          height: 150,
+                          child: Image.asset(
+                              'image/j.jpg'
+                          ),
+                        ),
+                      if(focusedDay==DateTime.utc(2021, 12, 4))
+                        Container(
+                          width: 150,
+                          height: 150,
+                          child: Image.asset(
+                              'image/j.jpg'
+                          ),
+                        ),
+                      if(focusedDay==DateTime.utc(2021, 12, 11))
+                        Container(
+                          width: 150,
+                          height: 150,
+                          child: Image.asset(
+                              'image/j.jpg'
+                          ),
+                        ),
+                      if(focusedDay==DateTime.utc(2021, 12, 18))
+                        Container(
+                          width: 150,
+                          height: 150,
+                          child: Image.asset(
+                              'image/j.jpg'
+                          ),
+                        ),
+                      if(focusedDay==DateTime.utc(2021, 12, 25))
+                        Container(
+                          width: 150,
+                          height: 150,
+                          child: Image.asset(
+                              'image/j.jpg'
+                          ),
+                        ),
+                      if(focusedDay==DateTime.utc(2021, 1, 1))
+                        Container(
+                          width: 150,
+                          height: 150,
+                          child: Image.asset(
+                              'image/j.jpg'
+                          ),
+                        ),
+                      if(focusedDay==DateTime.utc(2021, 1, 8))
+                        Container(
+                          width: 150,
+                          height: 150,
+                          child: Image.asset(
+                              'image/j.jpg'
+                          ),
+                        ),
+                      if(focusedDay==DateTime.utc(2021, 1, 15))
+                        Container(
+                          width: 150,
+                          height: 150,
+                          child: Image.asset(
+                              'image/j.jpg'
+                          ),
+                        ),
+                      if(focusedDay==DateTime.utc(2021, 1, 22))
+                        Container(
+                          width: 150,
+                          height: 150,
+                          child: Image.asset(
+                              'image/j.jpg'
+                          ),
+                        ),
+                      if(focusedDay==DateTime.utc(2021, 1, 29))
+                        Container(
+                          width: 150,
+                          height: 150,
+                          child: Image.asset(
+                              'image/j.jpg'
+                          ),
+                        ),
+                      if(focusedDay==DateTime.utc(2021, 2, 5))
+                        Container(
+                          width: 150,
+                          height: 150,
+                          child: Image.asset(
+                              'image/j.jpg'
+                          ),
+                        ),
+                      if(focusedDay==DateTime.utc(2021, 2, 12))
+                        Container(
+                          width: 150,
+                          height: 150,
+                          child: Image.asset(
+                              'image/j.jpg'
+                          ),
+                        ),
+                      if(focusedDay==DateTime.utc(2021, 2, 19))
+                        Container(
+                          width: 150,
+                          height: 150,
+                          child: Image.asset(
+                              'image/j.jpg'
+                          ),
+                        ),
+                      if(focusedDay==DateTime.utc(2021, 2, 26))
+                        Container(
+                          width: 150,
+                          height: 150,
+                          child: Image.asset(
+                              'image/j.jpg'
+                          ),
+                        ),
+                    ],
+                  ),
                 ),
-
-              ],
-            ),
-
-          ],
+              ),
+              Expanded(
+                flex: 6,
+                child: Container(
+                  child: TableCalendar(
+                    firstDay: DateTime.utc(2021, 10, 1),
+                    lastDay: DateTime.utc(2022, 2, 28),
+                    focusedDay: focusedDay,
+                    headerStyle: HeaderStyle(
+                      formatButtonVisible: false,
+                      titleCentered: true,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         )
-      ),
     );
   }
 }
 
-class FirstPage extends StatefulWidget {
-  const FirstPage({Key? key}) : super(key: key);
 
-  @override
-  _FirstPageState createState() => _FirstPageState();
-}
 
-class _FirstPageState extends State<FirstPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: Colors.yellow,
-      ),
-    );
-  }
-}
 
