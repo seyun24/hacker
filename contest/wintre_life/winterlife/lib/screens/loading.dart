@@ -19,7 +19,7 @@ class _LoadingState extends State<Loading> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 3), () {
+    Timer(Duration(seconds: 2), () {
       getLocation();
     });
   }

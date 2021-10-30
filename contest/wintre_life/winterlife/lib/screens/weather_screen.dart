@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:timer_builder/timer_builder.dart';
 import 'package:intl/intl.dart';
 import 'package:weather_app/model/model.dart';
+import 'package:weather_app/screens/calendar.dart';
 
 class WeatherScreen extends StatefulWidget {
   WeatherScreen({this.parseWeatherData});
@@ -27,15 +28,12 @@ class _WeatherScreenState extends State<WeatherScreen> {
   }
 
   void updaterData(dynamic weatherData) {
-    double temp2 = weatherData['main']['temp'].toDouble();
     int condition = weatherData['weather'][0]['id'];
     des = weatherData['weather'][0]['description'];
-    cityName = weatherData['name'];
-    temp = temp2.round();
     icon = model.getWeatherIcon(condition);
-
-    print(temp);
-    print(cityName);
+    double temp2 = weatherData['main']['temp'];
+    temp = temp2.round();
+    cityName = weatherData['name'];
   }
 
   String getSystemTime() {
@@ -153,7 +151,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
           ),
         ),
       ),
-      Container(),
+      CalendarPage(),
     ]);
   }
 }
